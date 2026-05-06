@@ -24,7 +24,7 @@
       <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
     </ul>
   </nav>
-  <a href="/" class="nav-logo" aria-label="Zaytoon forside">
+  <a href="#" class="nav-logo" aria-label="Zaytoon forside">
     <img src="images/logo.png" alt="Zaytoon" class="nav-logo-img">
   </a>
   <div class="nav-right">
@@ -60,13 +60,37 @@
 
 <!-- SOCIAL DINING INTRO -->
 <section class="intro-section section-pad" data-tone="dark">
-  <div class="col-medium">
-    <p class="eyebrow reveal">Social Dining</p>
-    <h2 class="reveal" data-delay="1">Hvad er Zaytoon?</h2>
-    <div class="body-lg reveal" data-delay="2">
-      <p>Hos Zaytoon serverer vi social dining med rødder i Middelhavet og Mellemøsten. Små retter, der kommer løbende til bordet og er skabt til at blive delt, så I kan smage lidt af det hele.</p>
-      <p>Menuen består af kolde og varme mezze, hvor alt laves fra bunden med fokus på smag, balance og kvalitet. Fra cremede dips og friske salater til varme specialiteter og møre kødretter — alt er sammensat til at spille sammen.</p>
-      <p>Her handler det ikke om én ret per person, men om en fælles oplevelse omkring bordet.</p>
+  <div class="shape-arches" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="arch-dark" x="0" y="0" width="80" height="100" patternUnits="userSpaceOnUse">
+          <path d="M40,8 Q12,28 12,52 L12,100 L68,100 L68,52 Q68,28 40,8 Z" fill="none" stroke="#e7ca93" stroke-width="1.2"/>
+          <line x1="12" y1="52" x2="0" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+          <line x1="68" y1="52" x2="80" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arch-dark)"/>
+    </svg>
+  </div>
+  <div class="col-wide">
+    <div class="intro-layout">
+      <div class="intro-text">
+        <p class="eyebrow reveal">Social Dining</p>
+        <h2 class="reveal" data-delay="1">Hvad er Zaytoon?</h2>
+        <div class="body-lg reveal" data-delay="2">
+          <p>Hos Zaytoon serverer vi social dining med rødder i Middelhavet og Mellemøsten. Små retter, der kommer løbende til bordet og er skabt til at blive delt, så I kan smage lidt af det hele.</p>
+          <p>Menuen består af kolde og varme mezze, hvor alt laves fra bunden med fokus på smag, balance og kvalitet. Fra cremede dips og friske salater til varme specialiteter og møre kødretter — alt er sammensat til at spille sammen.</p>
+          <p>Her handler det ikke om én ret per person, men om en fælles oplevelse omkring bordet.</p>
+        </div>
+      </div>
+      <div class="intro-images">
+        <div class="intro-img-frame reveal" data-delay="1">
+          <img src="images/social-dining-table-02.jpg" alt="Gæster deler mad rundt om bordet" loading="lazy">
+        </div>
+        <div class="intro-img-frame reveal" data-delay="2">
+          <img src="images/social-dining-toast-02.jpg" alt="Social dining — skål og fællesskab" loading="lazy">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -92,6 +116,19 @@
 
 <!-- MEZZE GRID -->
 <section class="mezze-section section-pad" data-tone="dark">
+  <div class="shape-arches" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <use href="#arch-dark-pattern"/>
+      <defs>
+        <pattern id="arch-mezze" x="0" y="0" width="80" height="100" patternUnits="userSpaceOnUse">
+          <path d="M40,8 Q12,28 12,52 L12,100 L68,100 L68,52 Q68,28 40,8 Z" fill="none" stroke="#e7ca93" stroke-width="1.2"/>
+          <line x1="12" y1="52" x2="0" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+          <line x1="68" y1="52" x2="80" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arch-mezze)"/>
+    </svg>
+  </div>
   <div class="col-wide">
     <div style="margin-bottom: 64px; text-align: center;">
       <p class="eyebrow reveal">Vores mezze</p>
@@ -99,54 +136,96 @@
     </div>
     <div class="mezze-grid">
       <div class="mezze-card reveal">
-        <span class="tag">Kolde mezze</span>
-        <h3>Hummus</h3>
-        <p>Cremet kikærtepuré med tahini, citronsaft og olivenolie — serveret med varm brød.</p>
+        <div class="mezze-card-img"><img src="images/food-hummus-dip.jpg" alt="Hummus"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Kolde mezze</span>
+          <h3>Hummus</h3>
+          <p>Cremet kikærtepuré med tahini, citronsaft og olivenolie — serveret med varm brød.</p>
+        </div>
       </div>
       <div class="mezze-card reveal" data-delay="1">
-        <span class="tag">Kolde mezze</span>
-        <h3>Falafel</h3>
-        <p>Sprøde krydrede kikærteballer med hjemmelavet yoghurtsauce og friske urter.</p>
+        <div class="mezze-card-img"><img src="images/falafel.jpg" alt="Falafel"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Kolde mezze</span>
+          <h3>Falafel</h3>
+          <p>Sprøde krydrede kikærteballer med hjemmelavet yoghurtsauce og friske urter.</p>
+        </div>
       </div>
       <div class="mezze-card reveal" data-delay="2">
-        <span class="tag">Kolde mezze</span>
-        <h3>Fattoush</h3>
-        <p>Frisk salat med tomater, agurk, radiser og sprøde brødcroutoner i granatæble-dressing.</p>
+        <div class="mezze-card-img"><img src="images/social-dining-sharing-01.jpg" alt="Fattoush"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Kolde mezze</span>
+          <h3>Fattoush</h3>
+          <p>Frisk salat med tomater, agurk, radiser og sprøde brødcroutoner i granatæble-dressing.</p>
+        </div>
       </div>
       <div class="mezze-card reveal" data-delay="1">
-        <span class="tag">Varme mezze</span>
-        <h3>Kibbeh</h3>
-        <p>Sprøde boller af bulgur og oksekød fyldt med løg, pinjekerner og krydderier.</p>
+        <div class="mezze-card-img"><img src="images/kibbeh.jpg" alt="Kibbeh"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Varme mezze</span>
+          <h3>Kibbeh</h3>
+          <p>Sprøde boller af bulgur og oksekød fyldt med løg, pinjekerner og krydderier.</p>
+        </div>
       </div>
       <div class="mezze-card reveal" data-delay="2">
-        <span class="tag">Varme mezze</span>
-        <h3>Grillet kød</h3>
-        <p>Mørt marineret kød grillet over kul — serveret med chimichurri og grillede grøntsager.</p>
+        <div class="mezze-card-img"><img src="images/grilletkod.jpg" alt="Grillet kød"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Varme mezze</span>
+          <h3>Grillet kød</h3>
+          <p>Mørt marineret kød grillet over kul — serveret med chimichurri og grillede grøntsager.</p>
+        </div>
       </div>
       <div class="mezze-card reveal" data-delay="3">
-        <span class="tag">Varme mezze</span>
-        <h3>Sambousek</h3>
-        <p>Sprøde halvmånepandekager fyldt med ost eller kød og urter, serveret med dipsauce.</p>
+        <div class="mezze-card-img"><img src="images/sambousek.jpg" alt="Sambousek"></div>
+        <div class="mezze-card-body">
+          <span class="tag">Varme mezze</span>
+          <h3>Sambousek</h3>
+          <p>Sprøde halvmånepandekager fyldt med ost eller kød og urter, serveret med dipsauce.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- IMAGE PAIRS -->
-<section class="pair-section" data-tone="dark">
-  <div class="pair offset-right">
+<section class="pair-section" data-tone="dark" style="position:relative;overflow:hidden">
+  <div class="shape-arches" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="arch-pair" x="0" y="0" width="80" height="100" patternUnits="userSpaceOnUse">
+          <path d="M40,8 Q12,28 12,52 L12,100 L68,100 L68,52 Q68,28 40,8 Z" fill="none" stroke="#e7ca93" stroke-width="1.2"/>
+          <line x1="12" y1="52" x2="0" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+          <line x1="68" y1="52" x2="80" y2="52" stroke="#e7ca93" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arch-pair)"/>
+    </svg>
+  </div>
+  <div class="pair offset-right" style="position:relative;z-index:2">
     <div class="pair-frame reveal">
       <img src="images/food-mezze-spread-full.jpg" alt="Mezze spread — deling rundt om bordet" loading="lazy">
     </div>
     <div class="pair-frame reveal" data-delay="1">
-      <img src="images/social-dining-sharing-02.jpg" alt="Gæster deler mezze ved bordet" loading="lazy">
+      <img src="images/interior-overview-wide.jpg" alt="Zaytoon restaurant interiør" loading="lazy">
     </div>
   </div>
 </section>
 
 <!-- MENU TEASER -->
-<section class="menu-teaser section-pad" id="menukort" data-tone="dark">
-  <div class="col-wide">
+<section class="menu-teaser section-pad" id="menukort" style="position:relative;overflow:hidden">
+  <div class="shape-arches" aria-hidden="true" style="opacity:0.04;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="arch-menu" x="0" y="0" width="80" height="100" patternUnits="userSpaceOnUse">
+          <path d="M40,8 Q12,28 12,52 L12,100 L68,100 L68,52 Q68,28 40,8 Z" fill="none" stroke="#0a0808" stroke-width="1.2"/>
+          <line x1="12" y1="52" x2="0" y2="52" stroke="#0a0808" stroke-width="0.6"/>
+          <line x1="68" y1="52" x2="80" y2="52" stroke="#0a0808" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arch-menu)"/>
+    </svg>
+  </div>
+  <div class="col-wide" style="position:relative;z-index:2">
     <div class="menu-teaser-head">
       <p class="eyebrow reveal">Menukort</p>
       <h2 class="reveal" data-delay="1">Se hele vores menu</h2>
@@ -154,7 +233,7 @@
     </div>
     <div class="menu-grid">
       <div class="menu-card reveal" data-menu="menu/menu1.png" role="button" tabindex="0" aria-label="Åbn menukort — Kolde retter">
-        <img class="menu-card-thumb" src="images/food-hummus-dip.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/food-hummus-dip.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Kolde mezze</span>
           <h3>Kolde retter</h3>
@@ -162,7 +241,7 @@
         </div>
       </div>
       <div class="menu-card reveal" data-delay="1" data-menu="menu/menu2.webp" role="button" tabindex="0" aria-label="Åbn menukort — Varme retter">
-        <img class="menu-card-thumb" src="images/food-grilled-meat.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/food-grilled-meat.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Varme mezze</span>
           <h3>Varme retter</h3>
@@ -170,7 +249,7 @@
         </div>
       </div>
       <div class="menu-card reveal" data-delay="2" data-menu="menu/menu3.webp" role="button" tabindex="0" aria-label="Åbn menukort — Dagens retter">
-        <img class="menu-card-thumb" src="images/food-mezze-spread-full.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/social-dining-toast-01.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Specialiteter</span>
           <h3>Dagens retter</h3>
@@ -178,7 +257,7 @@
         </div>
       </div>
       <div class="menu-card reveal" data-delay="1" data-menu="menu/menu4.webp" role="button" tabindex="0" aria-label="Åbn menukort — Chef's selection">
-        <img class="menu-card-thumb" src="images/food-plating-blackgloves-01.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/chef.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Køkken</span>
           <h3>Chef's selection</h3>
@@ -186,7 +265,7 @@
         </div>
       </div>
       <div class="menu-card reveal" data-delay="2" data-menu="menu/drinksmenu.webp" role="button" tabindex="0" aria-label="Åbn drikkekort">
-        <img class="menu-card-thumb" src="images/atmosphere-table-glassware.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/atmosphere-table-glassware.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Drikkevarer</span>
           <h3>Drikkekort</h3>
@@ -194,7 +273,7 @@
         </div>
       </div>
       <div class="menu-card reveal" data-delay="3" data-menu="menu/winemenu.webp" role="button" tabindex="0" aria-label="Åbn vinkort">
-        <img class="menu-card-thumb" src="images/atmosphere-candlelight.jpg" alt="" loading="lazy">
+        <img class="menu-card-thumb" src="images/food-dip-sauce-close.jpg" alt="">
         <div class="menu-card-overlay">
           <span class="tag">Vin</span>
           <h3>Vinkort</h3>
@@ -206,7 +285,7 @@
 </section>
 
 <!-- DESERT VIDEO -->
-<section class="desert-section section-pad" data-tone="dark">
+<section class="desert-section" data-tone="dark">
   <div class="desert-video-wrap">
     <video class="desert-video" autoplay muted loop playsinline poster="images/atmosphere-candlelight.jpg">
       <source src="video/desertvideo.mp4" type="video/mp4">
@@ -219,6 +298,33 @@
     <p class="body-lg">Autentiske råvarer, traditioner og opskrifter samlet i retter, der bærer historien med sig.</p>
   </div>
 </section>
+
+<!-- SAND BRIDGE -->
+<div class="sand-bridge" aria-hidden="true">
+  <div class="shape-arches" style="opacity:0.05;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="arch-bridge" x="0" y="0" width="80" height="100" patternUnits="userSpaceOnUse">
+          <path d="M40,8 Q12,28 12,52 L12,100 L68,100 L68,52 Q68,28 40,8 Z" fill="none" stroke="#0a0808" stroke-width="1.2"/>
+          <line x1="12" y1="52" x2="0" y2="52" stroke="#0a0808" stroke-width="0.6"/>
+          <line x1="68" y1="52" x2="80" y2="52" stroke="#0a0808" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arch-bridge)"/>
+    </svg>
+  </div>
+  <div class="bridge-wave">
+    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,34 C360,14 720,42 1080,22 C1260,12 1380,28 1440,24 L1440,56 L0,56 Z" fill="#f2e0c6"/>
+    </svg>
+  </div>
+  <div class="bridge-body"></div>
+  <div class="bridge-wave">
+    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,34 C360,14 720,42 1080,22 C1260,12 1380,28 1440,24 L1440,0 L0,0 Z" fill="#f2e0c6"/>
+    </svg>
+  </div>
+</div>
 
 <!-- BOOK CTA -->
 <section class="book-cta section-pad" data-tone="dark">

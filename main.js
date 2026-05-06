@@ -41,7 +41,36 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal, .reveal-fade').forEach(el => io.observe(el));
+
+/* ============================================================
+   IMAGE REVEAL — waits for both: in-viewport AND loaded
+   ============================================================ */
+const ease = 'cubic-bezier(0.33, 1, 0.68, 1)';
+
+function fadeInImage(img) {
+  img.style.transition = `opacity 0.85s ${ease}`;
+  img.style.opacity = '1';
+}
+
+const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const img = entry.target;
+    imgObserver.unobserve(img);
+    if (img.complete && img.naturalWidth > 0) {
+      fadeInImage(img);
+    } else {
+      img.addEventListener('load', () => fadeInImage(img), { once: true });
+      img.addEventListener('error', () => fadeInImage(img), { once: true });
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.mezze-card-img img, .menu-card-thumb').forEach(img => {
+  img.style.opacity = '0';
+  imgObserver.observe(img);
+});
 
 /* ============================================================
    MOBILE DRAWER
@@ -119,19 +148,20 @@ lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightb
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
 /* ============================================================
-   DESERT VIDEO PARALLAX
+   DESERT VIDEO: subtle parallax (scroll-lock feel)
    ============================================================ */
 const desertSection = document.querySelector('.desert-section');
 const desertVid = document.querySelector('.desert-video');
 
 if (desertSection && desertVid) {
+  desertVid.style.transform = 'scale(1.12)';
   function updateDesertParallax() {
     const rect = desertSection.getBoundingClientRect();
     const viewH = window.innerHeight;
     if (rect.bottom < 0 || rect.top > viewH) return;
     const progress = (viewH - rect.top) / (viewH + rect.height);
-    const shift = (progress - 0.5) * 80;
-    desertVid.style.transform = `translateY(${shift}px) scale(1.15)`;
+    const shift = (progress - 0.5) * 40;
+    desertVid.style.transform = `translateY(${shift}px) scale(1.12)`;
   }
   window.addEventListener('scroll', updateDesertParallax, { passive: true });
   updateDesertParallax();
