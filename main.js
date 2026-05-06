@@ -117,3 +117,54 @@ document.querySelectorAll('.menu-card').forEach(card => {
 lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+/* ============================================================
+   DESERT VIDEO PARALLAX
+   ============================================================ */
+const desertSection = document.querySelector('.desert-section');
+const desertVid = document.querySelector('.desert-video');
+
+if (desertSection && desertVid) {
+  function updateDesertParallax() {
+    const rect = desertSection.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    if (rect.bottom < 0 || rect.top > viewH) return;
+    const progress = (viewH - rect.top) / (viewH + rect.height);
+    const shift = (progress - 0.5) * 80;
+    desertVid.style.transform = `translateY(${shift}px) scale(1.15)`;
+  }
+  window.addEventListener('scroll', updateDesertParallax, { passive: true });
+  updateDesertParallax();
+}
+
+/* ============================================================
+   HERO VIDEO PARALLAX
+   ============================================================ */
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+  function updateHeroParallax() {
+    const scrollY = window.scrollY;
+    heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+  }
+  window.addEventListener('scroll', updateHeroParallax, { passive: true });
+}
+
+/* ============================================================
+   PAIR IMAGES: staggered parallax
+   ============================================================ */
+const pairFrames = document.querySelectorAll('.pair-frame');
+if (pairFrames.length) {
+  function updatePairParallax() {
+    pairFrames.forEach((frame, i) => {
+      const rect = frame.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      if (rect.bottom < 0 || rect.top > viewH) return;
+      const progress = (viewH - rect.top) / (viewH + rect.height);
+      const dir = i % 2 === 0 ? 1 : -1;
+      const shift = (progress - 0.5) * 40 * dir;
+      frame.style.transform = `translateY(${shift}px)`;
+    });
+  }
+  window.addEventListener('scroll', updatePairParallax, { passive: true });
+  updatePairParallax();
+}
