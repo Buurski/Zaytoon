@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Oliven — Baggrundsfigurer Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; background: #0a0a0a; color: #e8e9ea; }
+
+    :root {
+      --c-dark:    #050a09;
+      --c-sand:    #f2e0c6;
+      --c-ink:     #0a0808;
+      --c-accent:  #e7ca93;
+    }
+
+    h1 { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-accent); text-align: center; padding: 40px 0 8px; }
+    .subtitle { text-align: center; font-size: 14px; color: rgba(232,233,234,0.5); padding-bottom: 48px; }
+
+    .pair-label {
+      font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--c-accent); text-align: center;
+      padding: 56px 0 24px;
+    }
+    .pair-label span { color: rgba(232,233,234,0.4); font-size: 10px; letter-spacing: 0.1em; text-transform: none; display: block; margin-top: 4px; }
+
+    /* ---- PREVIEW BLOCKS ---- */
+    .preview-pair {
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 1100px; margin: 0 auto 80px; gap: 2px;
+    }
+    .block {
+      position: relative; overflow: hidden;
+      height: 420px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    .block-label {
+      position: absolute; bottom: 20px; left: 0; right: 0; text-align: center;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5;
+    }
+    .block.dark { background: var(--c-dark); }
+    .block.light { background: var(--c-sand); }
+    .block.dark .block-label { color: var(--c-sand); }
+    .block.light .block-label { color: var(--c-ink); }
+
+    .sample-text-dark { font-family: 'Oswald', sans-serif; font-size: 28px; text-transform: uppercase; color: var(--c-sand); opacity: 0.9; z-index: 2; }
+    .sample-text-light { font-family: 'Oswald', sans-serif; font-size: 28px; text-transform: uppercase; color: var(--c-ink); opacity: 0.9; z-index: 2; }
+    .sample-sub-dark { font-size: 13px; color: rgba(232,233,234,0.55); z-index: 2; }
+    .sample-sub-light { font-size: 13px; color: rgba(10,8,8,0.45); z-index: 2; }
+
+    /* ================================================================
+       OPTION 1: ZELLIGE GEOMETRIC TILE
+       ================================================================ */
+    .opt1-bg {
+      position: absolute; inset: -20%; opacity: 0.07;
+      background-image:
+        repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%),
+        repeating-linear-gradient(-45deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%);
+      background-size: 32px 32px;
+    }
+    .block.dark .opt1-bg { color: var(--c-sand); }
+    .block.light .opt1-bg { color: var(--c-ink); }
+
+    /* ================================================================
+       OPTION 2: ARABESQUE ARCH SILHOUETTES
+       ================================================================ */
+    .opt2-arches {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      display: flex; justify-content: center; gap: 0; pointer-events: none;
+    }
+    .arch {
+      width: 110px; height: 180px; flex-shrink: 0;
+      border-radius: 55px 55px 0 0;
+      border: 2px solid currentColor; border-bottom: none;
+      position: relative; top: 0;
+    }
+    .arch-inner {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 60px; height: 100px;
+      border-radius: 30px 30px 0 0;
+      border: 2px solid currentColor; border-bottom: none;
+    }
+    .opt2-arches-top {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; justify-content: center; gap: 0; pointer-events: none;
+      transform: rotate(180deg);
+    }
+    .block.dark .arch, .block.dark .arch-inner { color: var(--c-accent); opacity: 0.15; }
+    .block.light .arch, .block.light .arch-inner { color: var(--c-ink); opacity: 0.1; }
+
+    /* ================================================================
+       OPTION 3: BOTANICAL — olive branches, dots
+       ================================================================ */
+    .opt3-left, .opt3-right {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      opacity: 0.12; pointer-events: none;
+    }
+    .opt3-left { left: -20px; }
+    .opt3-right { right: -20px; transform: translateY(-50%) scaleX(-1); }
+    .block.dark .opt3-left svg, .block.dark .opt3-right svg { fill: var(--c-sand); }
+    .block.light .opt3-left svg, .block.light .opt3-right svg { fill: var(--c-ink); }
+    .opt3-corner {
+      position: absolute; top: 20px; right: 20px;
+      opacity: 0.1; pointer-events: none;
+    }
+    .block.dark .opt3-corner svg { fill: var(--c-accent); }
+    .block.light .opt3-corner svg { fill: var(--c-ink); }
+
+    /* ================================================================
+       OPTION 4: ISLAMIC STAR & CRESCENT SCATTER
+       ================================================================ */
+    .opt4-scatter {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .star-shape {
+      position: absolute; opacity: 0.08;
+    }
+    .block.dark .star-shape { fill: var(--c-accent); }
+    .block.light .star-shape { fill: var(--c-ink); }
+
+    /* ================================================================
+       OPTION 5: SAND DUNE WAVES
+       ================================================================ */
+    .opt5-dunes {
+      position: absolute; bottom: 0; left: 0; right: 0; pointer-events: none;
+    }
+    .opt5-top {
+      position: absolute; top: 0; left: 0; right: 0; pointer-events: none; transform: rotate(180deg);
+    }
+    .block.dark .opt5-dunes path, .block.dark .opt5-top path { fill: var(--c-accent); opacity: 0.07; }
+    .block.light .opt5-dunes path, .block.light .opt5-top path { fill: var(--c-ink); opacity: 0.06; }
+
+    /* ================================================================
+       OPTION 6: FINE DOT GRID + CORNER ORNAMENTS
+       ================================================================ */
+    .opt6-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+      background-size: 28px 28px; opacity: 0.07;
+    }
+    .block.dark .opt6-dots { color: var(--c-accent); }
+    .block.light .opt6-dots { color: var(--c-ink); }
+    .opt6-corner-tl, .opt6-corner-br {
+      position: absolute; opacity: 0.15; pointer-events: none;
+    }
+    .opt6-corner-tl { top: 16px; left: 16px; }
+    .opt6-corner-br { bottom: 16px; right: 16px; transform: rotate(180deg); }
+    .block.dark .opt6-corner-tl svg, .block.dark .opt6-corner-br svg { stroke: var(--c-accent); fill: none; }
+    .block.light .opt6-corner-tl svg, .block.light .opt6-corner-br svg { stroke: var(--c-ink); fill: none; }
+
+  </style>
+</head>
+<body>
+
+<h1>Restaurant Oliven — Baggrundsfigurer</h1>
+<p class="subtitle">Vælg din favorit (mørk sektion til venstre, beige sektion til højre)</p>
+
+<!-- ================================================================
+     OPTION 1: ZELLIGE GEOMETRIC GRID
+     ================================================================ -->
+<p class="pair-label">Option 1 — Zellige Geometrisk Gitter
+  <span>Marokkansk flisemønster · Diskret crosshatch · Fuld baggrund</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <div class="opt1-bg"></div>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <div class="opt1-bg"></div>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     OPTION 2: ARABESQUE ARCHES
+     ================================================================ -->
+<p class="pair-label">Option 2 — Arabeskbuer
+  <span>Orientalske spidsbuer · Top og bund · Arkitektonisk</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <div class="opt2-arches-top">
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+    </div>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <div class="opt2-arches">
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+    </div>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <div class="opt2-arches-top">
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+    </div>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <div class="opt2-arches">
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+      <div class="arch"><div class="arch-inner"></div></div>
+    </div>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     OPTION 3: BOTANICAL OLIVE BRANCHES
+     ================================================================ -->
+<p class="pair-label">Option 3 — Botaniske Olivengrene
+  <span>Mediterrane planteblade · Side-dekorationer · Organisk</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <div class="opt3-left">
+      <svg width="120" height="320" viewBox="0 0 120 320">
+        <!-- Stem -->
+        <path d="M60 300 Q55 250 58 200 Q54 150 60 100 Q56 60 60 20" stroke="currentColor" stroke-width="2" fill="none"/>
+        <!-- Leaves left -->
+        <ellipse cx="40" cy="260" rx="22" ry="10" transform="rotate(-30 40 260)" fill="currentColor"/>
+        <ellipse cx="35" cy="210" rx="26" ry="11" transform="rotate(-40 35 210)" fill="currentColor"/>
+        <ellipse cx="38" cy="160" rx="24" ry="10" transform="rotate(-25 38 160)" fill="currentColor"/>
+        <ellipse cx="33" cy="115" rx="22" ry="9" transform="rotate(-45 33 115)" fill="currentColor"/>
+        <ellipse cx="36" cy="70" rx="20" ry="9" transform="rotate(-35 36 70)" fill="currentColor"/>
+        <!-- Leaves right -->
+        <ellipse cx="80" cy="235" rx="22" ry="10" transform="rotate(30 80 235)" fill="currentColor"/>
+        <ellipse cx="85" cy="185" rx="25" ry="11" transform="rotate(40 85 185)" fill="currentColor"/>
+        <ellipse cx="82" cy="138" rx="22" ry="9" transform="rotate(25 82 138)" fill="currentColor"/>
+        <ellipse cx="87" cy="92" rx="20" ry="9" transform="rotate(42 87 92)" fill="currentColor"/>
+        <!-- Olives -->
+        <circle cx="42" cy="240" r="5" fill="currentColor"/>
+        <circle cx="83" cy="200" r="5" fill="currentColor"/>
+        <circle cx="39" cy="145" r="4" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="opt3-right">
+      <svg width="120" height="320" viewBox="0 0 120 320">
+        <path d="M60 300 Q55 250 58 200 Q54 150 60 100 Q56 60 60 20" stroke="currentColor" stroke-width="2" fill="none"/>
+        <ellipse cx="40" cy="260" rx="22" ry="10" transform="rotate(-30 40 260)" fill="currentColor"/>
+        <ellipse cx="35" cy="210" rx="26" ry="11" transform="rotate(-40 35 210)" fill="currentColor"/>
+        <ellipse cx="38" cy="160" rx="24" ry="10" transform="rotate(-25 38 160)" fill="currentColor"/>
+        <ellipse cx="33" cy="115" rx="22" ry="9" transform="rotate(-45 33 115)" fill="currentColor"/>
+        <ellipse cx="80" cy="235" rx="22" ry="10" transform="rotate(30 80 235)" fill="currentColor"/>
+        <ellipse cx="85" cy="185" rx="25" ry="11" transform="rotate(40 85 185)" fill="currentColor"/>
+        <circle cx="42" cy="240" r="5" fill="currentColor"/>
+        <circle cx="83" cy="200" r="5" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <div class="opt3-left">
+      <svg width="120" height="320" viewBox="0 0 120 320">
+        <path d="M60 300 Q55 250 58 200 Q54 150 60 100 Q56 60 60 20" stroke="currentColor" stroke-width="2" fill="none"/>
+        <ellipse cx="40" cy="260" rx="22" ry="10" transform="rotate(-30 40 260)" fill="currentColor"/>
+        <ellipse cx="35" cy="210" rx="26" ry="11" transform="rotate(-40 35 210)" fill="currentColor"/>
+        <ellipse cx="38" cy="160" rx="24" ry="10" transform="rotate(-25 38 160)" fill="currentColor"/>
+        <ellipse cx="33" cy="115" rx="22" ry="9" transform="rotate(-45 33 115)" fill="currentColor"/>
+        <ellipse cx="36" cy="70" rx="20" ry="9" transform="rotate(-35 36 70)" fill="currentColor"/>
+        <ellipse cx="80" cy="235" rx="22" ry="10" transform="rotate(30 80 235)" fill="currentColor"/>
+        <ellipse cx="85" cy="185" rx="25" ry="11" transform="rotate(40 85 185)" fill="currentColor"/>
+        <ellipse cx="82" cy="138" rx="22" ry="9" transform="rotate(25 82 138)" fill="currentColor"/>
+        <circle cx="42" cy="240" r="5" fill="currentColor"/>
+        <circle cx="83" cy="200" r="5" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="opt3-right">
+      <svg width="120" height="320" viewBox="0 0 120 320">
+        <path d="M60 300 Q55 250 58 200 Q54 150 60 100 Q56 60 60 20" stroke="currentColor" stroke-width="2" fill="none"/>
+        <ellipse cx="40" cy="260" rx="22" ry="10" transform="rotate(-30 40 260)" fill="currentColor"/>
+        <ellipse cx="35" cy="210" rx="26" ry="11" transform="rotate(-40 35 210)" fill="currentColor"/>
+        <ellipse cx="38" cy="160" rx="24" ry="10" transform="rotate(-25 38 160)" fill="currentColor"/>
+        <ellipse cx="33" cy="115" rx="22" ry="9" transform="rotate(-45 33 115)" fill="currentColor"/>
+        <ellipse cx="80" cy="235" rx="22" ry="10" transform="rotate(30 80 235)" fill="currentColor"/>
+        <ellipse cx="85" cy="185" rx="25" ry="11" transform="rotate(40 85 185)" fill="currentColor"/>
+        <circle cx="42" cy="240" r="5" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     OPTION 4: ISLAMIC STAR SCATTER
+     ================================================================ -->
+<p class="pair-label">Option 4 — Islamiske Stjerner
+  <span>8-takket stjerne · Spredt scatter · Traditionel geometri</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <div class="opt4-scatter">
+      <!-- 8-pointed stars scattered -->
+      <svg class="star-shape" style="width:70px;top:18%;left:8%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+        <polygon points="50,15 57,40 82,40 63,54 71,79 50,64 29,79 37,54 18,40 43,40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+      </svg>
+      <svg class="star-shape" style="width:40px;top:60%;left:5%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:55px;top:10%;right:10%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:90px;bottom:10%;right:6%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+        <polygon points="50,15 57,40 82,40 63,54 71,79 50,64 29,79 37,54 18,40 43,40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <svg class="star-shape" style="width:35px;bottom:25%;left:12%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <!-- Crescent -->
+      <svg class="star-shape" style="width:50px;top:40%;right:8%;opacity:0.1" viewBox="0 0 100 100">
+        <path d="M70,20 A35,35 0 1,0 70,80 A25,25 0 1,1 70,20Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <div class="opt4-scatter">
+      <svg class="star-shape" style="width:70px;top:18%;left:8%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:40px;top:60%;left:5%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:55px;top:10%;right:10%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:90px;bottom:10%;right:6%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+      <svg class="star-shape" style="width:35px;bottom:25%;left:12%" viewBox="0 0 100 100">
+        <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     OPTION 5: SAND DUNE WAVES
+     ================================================================ -->
+<p class="pair-label">Option 5 — Sanddyne Bølger
+  <span>Organiske kurver · Ørken-stemning · Top og bund</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <svg class="opt5-top" width="100%" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,40 Q150,100 300,40 Q450,-20 600,40 Q750,100 900,40 Q1050,-20 1200,40 L1200,0 L0,0 Z" class="opt5-path"/>
+      <path d="M0,70 Q200,120 400,70 Q600,20 800,70 Q1000,120 1200,70 L1200,0 L0,0 Z" class="opt5-path" style="opacity:0.5"/>
+    </svg>
+    <style>
+      .block.dark .opt5-path { fill: var(--c-accent); opacity: 0.07; }
+      .block.light .opt5-path { fill: var(--c-ink); opacity: 0.06; }
+    </style>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <svg class="opt5-dunes" width="100%" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,80 Q150,20 300,80 Q450,140 600,80 Q750,20 900,80 Q1050,140 1200,80 L1200,120 L0,120 Z" class="opt5-path"/>
+      <path d="M0,60 Q200,10 400,60 Q600,110 800,60 Q1000,10 1200,60 L1200,120 L0,120 Z" class="opt5-path" style="opacity:0.5"/>
+    </svg>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <svg class="opt5-top" width="100%" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,40 Q150,100 300,40 Q450,-20 600,40 Q750,100 900,40 Q1050,-20 1200,40 L1200,0 L0,0 Z" class="opt5-path"/>
+      <path d="M0,70 Q200,120 400,70 Q600,20 800,70 Q1000,120 1200,70 L1200,0 L0,0 Z" class="opt5-path" style="opacity:0.5"/>
+    </svg>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <svg class="opt5-dunes" width="100%" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,80 Q150,20 300,80 Q450,140 600,80 Q750,20 900,80 Q1050,140 1200,80 L1200,120 L0,120 Z" class="opt5-path"/>
+      <path d="M0,60 Q200,10 400,60 Q600,110 800,60 Q1000,10 1200,60 L1200,120 L0,120 Z" class="opt5-path" style="opacity:0.5"/>
+    </svg>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     OPTION 6: DOT GRID + CORNER ORNAMENTS
+     ================================================================ -->
+<p class="pair-label">Option 6 — Prikgitter + Hjørneornamenter
+  <span>Subtil dot-grid · Dekorative hjørner · Reneste udtryk</span>
+</p>
+<div class="preview-pair">
+  <div class="block dark">
+    <div class="opt6-dots"></div>
+    <div class="opt6-corner-tl">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <line x1="0" y1="30" x2="60" y2="30" stroke-width="1"/>
+        <line x1="30" y1="0" x2="30" y2="60" stroke-width="1"/>
+        <circle cx="30" cy="30" r="12" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="4" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="1.5"/>
+        <circle cx="30" cy="18" r="1.5"/>
+        <circle cx="30" cy="42" r="1.5"/>
+        <circle cx="18" cy="30" r="1.5"/>
+        <circle cx="42" cy="30" r="1.5"/>
+      </svg>
+    </div>
+    <div class="opt6-corner-br">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <line x1="0" y1="30" x2="60" y2="30" stroke-width="1"/>
+        <line x1="30" y1="0" x2="30" y2="60" stroke-width="1"/>
+        <circle cx="30" cy="30" r="12" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="4" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="1.5"/>
+        <circle cx="30" cy="18" r="1.5"/>
+        <circle cx="30" cy="42" r="1.5"/>
+        <circle cx="18" cy="30" r="1.5"/>
+        <circle cx="42" cy="30" r="1.5"/>
+      </svg>
+    </div>
+    <span class="sample-text-dark">Se hele vores menu</span>
+    <span class="sample-sub-dark">Klik på et kort for at åbne</span>
+    <span class="block-label">Mørk sektion</span>
+  </div>
+  <div class="block light">
+    <div class="opt6-dots"></div>
+    <div class="opt6-corner-tl">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <line x1="0" y1="30" x2="60" y2="30" stroke-width="1"/>
+        <line x1="30" y1="0" x2="30" y2="60" stroke-width="1"/>
+        <circle cx="30" cy="30" r="12" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="4" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="1.5"/>
+        <circle cx="30" cy="18" r="1.5"/>
+        <circle cx="30" cy="42" r="1.5"/>
+        <circle cx="18" cy="30" r="1.5"/>
+        <circle cx="42" cy="30" r="1.5"/>
+      </svg>
+    </div>
+    <div class="opt6-corner-br">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <line x1="0" y1="30" x2="60" y2="30" stroke-width="1"/>
+        <line x1="30" y1="0" x2="30" y2="60" stroke-width="1"/>
+        <circle cx="30" cy="30" r="12" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="4" stroke-width="1" fill="none"/>
+        <circle cx="30" cy="30" r="1.5"/>
+        <circle cx="30" cy="18" r="1.5"/>
+        <circle cx="30" cy="42" r="1.5"/>
+        <circle cx="18" cy="30" r="1.5"/>
+        <circle cx="42" cy="30" r="1.5"/>
+      </svg>
+    </div>
+    <span class="sample-text-light">Se hele vores menu</span>
+    <span class="sample-sub-light">Klik på et kort for at åbne</span>
+    <span class="block-label">Beige sektion</span>
+  </div>
+</div>
+
+<p style="text-align:center; color:rgba(232,233,234,0.3); font-size:12px; padding:48px 0 80px; letter-spacing:0.1em; text-transform:uppercase;">
+  Sigende: "Option X" for at vælge · Kombinationer er også mulige
+</p>
+
+</body>
+</html>

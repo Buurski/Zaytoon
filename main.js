@@ -90,10 +90,10 @@ burger.addEventListener('click', () => {
   drawer.innerHTML = `
     <button class="drawer-close" aria-label="Luk menu">&times;</button>
     <a href="#menukort">Menukort</a>
-    <a href="https://zaytoon.nemtakeaway.dk/order.php" target="_blank" rel="noopener">Take Away</a>
+    <a href="https://restaurantoliven.nemtakeaway.dk/order.php" target="_blank" rel="noopener">Take Away</a>
     <a href="#om-os">Om os</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="https://zaytoon.booketbord.dk/onlinebooking?_gl=1%2a16asecp%2a_ga%2aNDEzNDAzMDEzLjE3Nzc4ODgyOTE.%2a_ga_HBD6HJJY4J%2aczE3NzgwNzMyNjYkbzEwJGcwJGQxNzc4MDczMjY4JGo1OCRsMCRoMA.." class="btn-solid" target="_blank" rel="noopener" style="margin-top: 16px;">Book Bord</a>
+    <a href="https://restaurantoliven.booketbord.dk/onlinebooking?_gl=1%2a16asecp%2a_ga%2aNDEzNDAzMDEzLjE3Nzc4ODgyOTE.%2a_ga_HBD6HJJY4J%2aczE3NzgwNzMyNjYkbzEwJGcwJGQxNzc4MDczMjY4JGo1OCRsMCRoMA.." class="btn-solid" target="_blank" rel="noopener" style="margin-top: 16px;">Book Bord</a>
   `;
   document.body.appendChild(drawer);
   document.body.style.overflow = 'hidden';

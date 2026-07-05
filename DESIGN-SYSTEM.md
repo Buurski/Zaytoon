@@ -1,6 +1,6 @@
-# Zaytoon — Designsystem
+# Restaurant Oliven — Designsystem
 
-Baseret på Mellow-strukturen og animationsmønstre, tilpasset Zaytoons identitet: varm sand-domineret, dyb og autentisk i tonen, med stærkt fokus på social dining og mellemøstlig madkultur.
+Baseret på Mellow-strukturen og animationsmønstre, tilpasset Restaurant Olivens identitet: varm sand-domineret, dyb og autentisk i tonen, med stærkt fokus på social dining og mellemøstlig madkultur.
 
 ---
 
@@ -10,7 +10,7 @@ Baseret på Mellow-strukturen og animationsmønstre, tilpasset Zaytoons identite
 
 Sproget på sitet er varmt, indbydende og direkte. Det taler til gæstens nysgerrighed og sociale instinkter — det handler om at samles, dele og smage. Ikke stift, ikke klinisk. Sanselig og ægte.
 
-**Zaytoons to primære budskaber:**
+**Restaurant Olivens to primære budskaber:**
 1. **Social dining** — mezze-kultur, deling, fælles oplevelse rundt om bordet
 2. **Autentisk mellemøstlig og middelhavs mad** — lavet fra bunden, kolde og varme retter
 
@@ -21,7 +21,7 @@ Begge skal kommunikeres tydeligt fra første scroll. Social dining-konceptet sæ
 ## Farvepalette
 
 ### Princippet
-Zaytoon bruger **mørk near-black** (`#050a09`) som primær sektionsbaggrund med varm sand som kontrast og accent. Det modsatte af Mellow: her dominerer mørket, og sanden lyser op imod den. Headeren er lys og sand-farvet. Ingen brun.
+Restaurant Oliven bruger **mørk near-black** (`#050a09`) som primær sektionsbaggrund med varm sand som kontrast og accent. Det modsatte af Mellow: her dominerer mørket, og sanden lyser op imod den. Headeren er lys og sand-farvet. Ingen brun.
 
 ```css
 :root {
@@ -65,7 +65,7 @@ Zaytoon bruger **mørk near-black** (`#050a09`) som primær sektionsbaggrund med
 |---|---|---|
 | Header/nav | `--c-sand` | `--c-ink` |
 | Hero (fullscreen) | Billede + mørkt overlay | `--c-light-text` |
-| Om Zaytoon / intro | `--c-dark` | `--c-light-text` |
+| Om Restaurant Oliven / intro | `--c-dark` | `--c-light-text` |
 | Menukort-teaser | `--c-dark-mid` | `--c-light-text` |
 | Info-strip / nøglepunkter | `--c-sand-soft` | `--c-ink` |
 | Book bord CTA-sektion | `--c-dark` | `--c-light-text` |
@@ -75,7 +75,7 @@ Zaytoon bruger **mørk near-black** (`#050a09`) som primær sektionsbaggrund med
 
 ## Typografi
 
-Display-font er **Oswald** — geometrisk, fed og karakterfuld. Passer til Zaytoons markante identitet. Body-font er **Poppins** til brødtekst og **Roboto** til navigation og labels.
+Display-font er **Oswald** — geometrisk, fed og karakterfuld. Passer til Restaurant Olivens markante identitet. Body-font er **Poppins** til brødtekst og **Roboto** til navigation og labels.
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
@@ -231,7 +231,7 @@ Smal informationsbar over navigationen.
 }
 ```
 
-Indhold: `Lokation: Smedegade 1, 8700 Horsens`
+Indhold: `Lokation: Bygholm Parkvej 210, 8700 Horsens`
 
 ---
 
@@ -260,7 +260,7 @@ Fuld-skærm looping video (`video/herovideo.mp4`) som baggrund med mørkt overla
     <p class="hero-sub">Social dining i hjertet af Horsens</p>
     <div class="hero-actions">
       <a href="/menukort" class="btn-solid">Se menukort</a>
-      <a href="https://zaytoon.booketbord.dk/onlinebooking" class="btn-outline" target="_blank" rel="noopener">Bestil bord</a>
+      <a href="https://restaurantoliven.booketbord.dk/onlinebooking" class="btn-outline" target="_blank" rel="noopener">Bestil bord</a>
     </div>
   </div>
   <div class="scroll-cue">
@@ -361,7 +361,7 @@ Fuld-skærm looping video (`video/herovideo.mp4`) som baggrund med mørkt overla
 
 ---
 
-## "Hvad er Zaytoon?" — Social dining intro-sektion
+## "Hvad er Restaurant Oliven?" — Social dining intro-sektion
 
 Mørk baggrund. Fortæller gæsten hvad social dining er og sætter scenen for resten af oplevelsen. Placeres som anden sektion.
 
@@ -369,9 +369,9 @@ Mørk baggrund. Fortæller gæsten hvad social dining er og sætter scenen for r
 <section class="section-pad intro-section" data-tone="dark">
   <div class="col-medium">
     <p class="eyebrow reveal">Social Dining</p>
-    <h2 class="reveal" data-delay="1">Hvad er Zaytoon?</h2>
+    <h2 class="reveal" data-delay="1">Hvad er Restaurant Oliven?</h2>
     <div class="body-lg reveal" data-delay="2">
-      <p>Hos Zaytoon serverer vi social dining med rødder i Middelhavet og Mellemøsten. Små retter, der kommer løbende til bordet og er skabt til at blive delt, så I kan smage lidt af det hele.</p>
+      <p>Hos Restaurant Oliven serverer vi social dining med rødder i Middelhavet og Mellemøsten. Små retter, der kommer løbende til bordet og er skabt til at blive delt, så I kan smage lidt af det hele.</p>
       <p>Menuen består af kolde og varme mezze, hvor alt laves fra bunden med fokus på smag, balance og kvalitet. Fra cremede dips og friske salater til varme specialiteter og møre kødretter – alt er sammensat til at spille sammen.</p>
       <p>Her handler det ikke om én ret per person, men om en fælles oplevelse omkring bordet.</p>
     </div>
@@ -817,7 +817,7 @@ Viser udvalgte mezze-retter med navn og kort beskrivelse. Mørk baggrund med gul
 **Footer indhold:**
 - Kolonne 1: Logo + kort beskrivelse + socialemedier
 - Kolonne 2: Åbningstider (Man–Tor 16:30–21:00 / Fre–Lør 16:30–22:00 / Søn: Lukket)
-- Kolonne 3: Adresse + kontakt (Smedegade 1, 8700 Horsens · kontakt@zaytoon.dk · +45 2287 0066)
+- Kolonne 3: Adresse + kontakt (Bygholm Parkvej 210, 8700 Horsens · hej@restaurantoliven.dk · +45 12 34 56 78)
 
 ---
 
@@ -934,7 +934,7 @@ Viser udvalgte mezze-retter med navn og kort beskrivelse. Mørk baggrund med gul
 
 ## Social dining-sektion — designprioriteter
 
-Dette er Zaytoons kernefortælling og skal kommunikeres tydeligt og visuelt.
+Dette er Restaurant Olivens kernefortælling og skal kommunikeres tydeligt og visuelt.
 
 **Hvad sektionen skal formidle:**
 - Konceptet: small plates, løbende servering, deling rundt om bordet
@@ -954,10 +954,10 @@ Logo-filen indsættes, når det er klar. Placeholder:
 
 ```html
 <!-- Mørk nav / hero: hvid/lys variant -->
-<img src="billeder/zaytoon-logo-light.svg" alt="Zaytoon" class="nav-logo nav-logo--light">
+<img src="billeder/restaurantoliven-logo-light.svg" alt="Restaurant Oliven" class="nav-logo nav-logo--light">
 
 <!-- Lys nav / sand-baggrund: mørk variant -->
-<img src="billeder/zaytoon-logo-dark.svg" alt="Zaytoon" class="nav-logo nav-logo--dark">
+<img src="billeder/restaurantoliven-logo-dark.svg" alt="Restaurant Oliven" class="nav-logo nav-logo--dark">
 ```
 
 ```css
@@ -1067,7 +1067,7 @@ document.querySelector('.burger').addEventListener('click', () => {
       <a href="/gavekort">Gavekort</a>
       <a href="/om-os">Om os</a>
       <a href="/kontakt">Kontakt</a>
-      <a href="https://zaytoon.booketbord.dk/onlinebooking" class="btn-solid" target="_blank">Book Bord</a>
+      <a href="https://restaurantoliven.booketbord.dk/onlinebooking" class="btn-solid" target="_blank">Book Bord</a>
     </nav>
   `;
   document.body.appendChild(drawer);
@@ -1126,7 +1126,7 @@ document.querySelector('.burger').addEventListener('click', () => {
 | `top-bar` | Smal informationsbar, mørk baggrund, adresse |
 | `nav` | Fast navigation, sand-baggrund, mørk variant ved scroll |
 | `hero` | Fullscreen billede med overlay, centreret tekst, 2 CTA-knapper, badge |
-| `intro-section` | "Hvad er Zaytoon?" — mørk baggrund, social dining-forklaring |
+| `intro-section` | "Hvad er Restaurant Oliven?" — mørk baggrund, social dining-forklaring |
 | `info-strip` | 3 kolonner på sand-baggrund, nøglefakta |
 | `mezze-grid` | 3 kolonner, mørk baggrund, guld-labels, mezze-typer |
 | `pair` | 2 billeder side om side med offset |
@@ -1173,10 +1173,10 @@ img {
 
 ## Forsidestruktur (anbefalet rækkefølge)
 
-1. **Top-bar** — adresse (Smedegade 1, 8700 Horsens)
+1. **Top-bar** — adresse (Bygholm Parkvej 210, 8700 Horsens)
 2. **Navigation** — sand-baggrund, logo til venstre, links til højre, "Book Bord"-knap
 3. **Hero** — `video/herovideo.mp4` som baggrundsvideo, "Byens Bedste"-badge, headline + subline, to CTA-knapper
-4. **Social dining intro** — "Hvad er Zaytoon?" på mørk baggrund, forklarer konceptet
+4. **Social dining intro** — "Hvad er Restaurant Oliven?" på mørk baggrund, forklarer konceptet
 5. **Info-strip** — 3 kernepunkter på sand (fx: Mezze · Social Dining · Horsens)
 6. **Mezze-grid eller billedpar** — brug `images/food-mezze-spread-full.jpg` + `images/social-dining-sharing-02.jpg`
 7. **Menukort-sektion** — teaser med link til `/menukort`, brug `images/food-overhead-01.jpg` eller `food-hummus-dip.jpg`
@@ -1266,8 +1266,8 @@ Alle billeder er downloadet fra den professionelle fotosession (Canon EOS R5 C, 
 ## Bekræftede URLs og assets (tilføjet ved implementering)
 
 ### Booking og Take Away
-- **Book Bord URL:** https://zaytoon.booketbord.dk/onlinebooking?_gl=1%2a16asecp%2a_ga%2aNDEzNDAzMDEzLjE3Nzc4ODgyOTE.%2a_ga_HBD6HJJY4J%2aczE3NzgwNzMyNjYkbzEwJGcwJHQxNzc4MDczMjY4JGo1OCRsMCRoMA..
-- **Take Away URL:** https://zaytoon.nemtakeaway.dk/order.php
+- **Book Bord URL:** https://restaurantoliven.booketbord.dk/onlinebooking?_gl=1%2a16asecp%2a_ga%2aNDEzNDAzMDEzLjE3Nzc4ODgyOTE.%2a_ga_HBD6HJJY4J%2aczE3NzgwNzMyNjYkbzEwJGcwJHQxNzc4MDczMjY4JGo1OCRsMCRoMA..
+- **Take Away URL:** https://restaurantoliven.nemtakeaway.dk/order.php
 
 ### Menukort-filer (i /menu/-mappen)
 
