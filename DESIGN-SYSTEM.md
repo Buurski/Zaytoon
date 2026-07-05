@@ -1273,12 +1273,12 @@ Alle billeder er downloadet fra den professionelle fotosession (Canon EOS R5 C, 
 
 | Fil | Indhold | Brug på sitet |
 |---|---|---|
-| `menu/menu1.png` | Kolde mezze-menu | Kortet "Kolde retter" |
-| `menu/menu2.webp` | Varme mezze-menu | Kortet "Varme retter" |
-| `menu/menu3.webp` | Dagens retter | Kortet "Dagens retter" |
-| `menu/menu4.webp` | Chef's selection | Kortet "Chef's selection" |
-| `menu/drinksmenu.webp` | Drikkekort | Kortet "Drikkekort" |
-| `menu/winemenu.webp` | Vinkort | Kortet "Vinkort" |
+| `menu/new-menu1.png` | Kolde mezze-menu | Kortet "Kolde retter" |
+| `menu/new-menu2.png` | Varme mezze-menu | Kortet "Varme retter" |
+| `menu/new-menu3.png` | Dagens retter | Kortet "Dagens retter" |
+| `menu/new-menu4.png` | Chef's selection | Kortet "Chef's selection" |
+| `menu/new-drinksmenu.png` | Drikkekort | Kortet "Drikkekort" |
+| `menu/new-winemenu.png` | Vinkort | Kortet "Vinkort" |
 
 ### Menukort-sektion — lightbox-interaktion
 
